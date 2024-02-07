@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_screen"
+    app:startDestination="@id/navigationFeatureModuleFragmentSettings">
+
+    <fragment
+        android:id="@+id/navigationFeatureModuleFragmentSettings"
+        android:name="com.example.navigationfeaturesettings.NavigationFeatureModuleSettingsFragment"
+        android:label="fragment_navigation_feature_module_settings"
+        tools:layout="@layout/fragment_navigation_feature_module_settings">
+        <action
+            android:id="@+id/action_navigationFeatureModuleFragmentSettings_to_navigationFeatureModuleFragmentSettingsTwo"
+            app:destination="@id/navigationFeatureModuleFragmentSettingsTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationFeatureModuleFragmentSettingsTwo"
+        android:name="com.example.navigationfeaturesettings.NavigationFeatureModuleSettingsDetailsFragment"
+        android:label="NavigationFeatureModuleFragmentSettingsTwo"
+        tools:layout="@layout/fragment_navigation_feature_module_settings_details">
+        <deepLink app:uri="android-app://com.example.navigation/settings_fragment_two" />
+    </fragment>
+</navigation>

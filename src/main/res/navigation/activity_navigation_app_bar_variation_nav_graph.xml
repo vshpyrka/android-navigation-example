@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_app_bar_variation_nav_graph"
+    app:startDestination="@id/navigationUiAppBarVariationFragmentOne">
+
+    <fragment
+        android:id="@+id/navigationUiAppBarVariationFragmentOne"
+        android:name="com.example.navigation.ui.appbarvariations.NavigationUiAppBarVariationFragmentOne"
+        android:label="AppBar Variation"
+        tools:layout="@layout/fragment_navigation_ui_app_bar_variation_one" >
+        <action
+            android:id="@+id/action_navigationUiAppBarVariationFragmentOne_to_navigationUiAppBarVariationFragmentTwo"
+            app:destination="@id/navigationUiAppBarVariationFragmentTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationUiAppBarVariationFragmentTwo"
+        android:name="com.example.navigation.ui.appbarvariations.NavigationUiAppBarVariationFragmentTwo"
+        android:label="AppBar Variation Destination"
+        tools:layout="@layout/fragment_navigation_ui_app_bar_variation_two" />
+</navigation>

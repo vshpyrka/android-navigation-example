@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context="com.example.navigation.interaction.NavigationInteractionActivity">
+
+    <Button
+        android:id="@+id/dynamicNavHost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Dynamic NavHost" />
+
+    <Button
+        android:id="@+id/dialogDestination"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Dialog destinations" />
+
+    <Button
+        android:id="@+id/navGraphViewModel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="NavGraph ViewModel" />
+
+    <Button
+        android:id="@+id/modifyNavGraph"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Modify NavGraph in Runtime" />
+</androidx.appcompat.widget.LinearLayoutCompat>

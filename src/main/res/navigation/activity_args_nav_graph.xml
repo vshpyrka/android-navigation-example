@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_args"
+    app:startDestination="@id/argumentFragmentOne">
+
+    <fragment
+        android:id="@+id/argumentFragmentOne"
+        android:name="com.example.navigation.args.ArgumentFragmentOne"
+        android:label="fragment_argument_one"
+        tools:layout="@layout/fragment_argument_one" >
+
+        <action
+            android:id="@+id/action_destinationFragmentOne_to_destinationFragmentTwo"
+            app:destination="@id/argumentFragmentTwo">
+            <argument
+                android:name="overwritten_argument"
+                android:defaultValue="null"
+                app:argType="string" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/argumentFragmentTwo"
+        android:name="com.example.navigation.args.ArgumentFragmentTwo"
+        android:label="fragment_argument_two"
+        tools:layout="@layout/fragment_argument_two">
+        <argument
+            android:name="argument"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_argumentFragmentTwo_to_argumentPassActivity"
+            app:destination="@id/argumentPassActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/argumentPassActivity"
+        android:name="com.example.navigation.args.ArgumentPassActivity"
+        android:label="activity_argument_pass"
+        tools:layout="@layout/activity_argument_pass" />
+</navigation>

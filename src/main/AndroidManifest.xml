@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <application android:theme="@style/Theme.AppCompat">
+
+        <activity
+            android:name="com.example.navigation.anim.NavAnimActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.args.ArgumentPassActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.navigation.args.ArgumentsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.example.navigation.destinations.DestinationsActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.deeplinks.BrowsableActivity"
+            android:exported="true"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/gizmos” -->
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/gizmos"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "example://gizmos” -->
+                <data
+                    android:host="gizmos"
+                    android:scheme="example" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.navigation.included.NavigationIncludedGraphActivity"
+            android:exported="true"
+            android:label="SecondNavigationActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+
+        <activity
+            android:name="com.example.navigation.ui.NavigationUiActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.ui.toolbar.NavigationUiToolbarActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.ui.collapsingtoolbar.CollapsingToolbarActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.ui.actionbar.NavigationUiActionBarActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity" />
+
+        <activity
+            android:name="com.example.navigation.ui.appbarvariations.NavigationUiAppBarVariationActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.deeplinks.explicit.NavigationExplicitDeepLinkActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.deeplinks.NavDeepLinkActivity"
+            android:exported="true">
+            <nav-graph android:value="@navigation/activity_nav_deep_link_nav_graph" />
+        </activity>
+
+
+        <activity
+            android:name="com.example.navigation.NavigationActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.ui.menuitems.NavigationMenuItemsActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.ui.drawer.NavigationDrawerActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.ui.bottomnav.NavigationUiBottomNavActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.ui.destination.NavigationUiDestinationListenerActivity"
+            android:exported="true"
+            android:parentActivityName="com.example.navigation.ui.NavigationUiActivity"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name="com.example.navigation.dsl.NavigationDSLActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.dsl.NavigationDSLActivityDestination"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.dsl.deeplink.NavigationDSLDeepLinkActivity"
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "http://www.example.com/navigation/dsl” -->
+                <data
+                    android:host="www.example.com"
+                    android:pathPrefix="/navigation/dsl"
+                    android:scheme="http" />
+                <!-- note that the leading "/" is required for pathPrefix -->
+            </intent-filter>
+
+        </activity>
+
+        <activity
+            android:name="com.example.navigation.interaction.dynamicnavhost.DynamicNavHostActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.interaction.NavigationInteractionActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.interaction.dialog.NavigationDialogInteractionActivity"
+            android:exported="true" />
+
+        <activity
+            android:name="com.example.navigation.interaction.navgraphviewmodel.NavigationNavGraphViewModelActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.navigation.interaction.modifygraph.NavigationModifyNavGraphActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.navigation.modules.FeatureModuleNavigationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name="com.example.navigation.launchsingletop.NavigationLaunchSingleTopActivity"
+            android:exported="true" />
+
+    </application>
+</manifest>

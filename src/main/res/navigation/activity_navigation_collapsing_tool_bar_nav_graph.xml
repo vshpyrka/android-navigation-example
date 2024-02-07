@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_collapsing_tool_bar_nav_graph"
+    app:startDestination="@id/collapsingToolbarFragmentOne">
+
+    <fragment
+        android:id="@+id/collapsingToolbarFragmentOne"
+        android:name="com.example.navigation.ui.collapsingtoolbar.CollapsingToolbarFragmentOne"
+        android:label="Collapsing Toolbar Navigation"
+        tools:layout="@layout/fragment_collapsing_toolbar_one" >
+        <action
+            android:id="@+id/action_collapsingToolbarFragmentOne_to_collapsingToolbarFragmentTwo"
+            app:destination="@id/collapsingToolbarFragmentTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/collapsingToolbarFragmentTwo"
+        android:name="com.example.navigation.ui.collapsingtoolbar.CollapsingToolbarFragmentTwo"
+        android:label="Destination"
+        tools:layout="@layout/fragment_collapsing_toolbar_two" />
+</navigation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_nav_graph"
+    app:startDestination="@id/settings">
+
+    <fragment
+        android:id="@+id/settings"
+        android:name="com.example.navigation.ui.drawer.nested.NavigationDrawerSettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_navigation_drawer_settings" >
+        <action
+            android:id="@+id/action_navigationDrawerSettingsFragment_to_navigationDrawerSettingsDetailsFragment"
+            app:destination="@id/settings_details" />
+    </fragment>
+    <fragment
+        android:id="@+id/settings_details"
+        android:name="com.example.navigation.ui.drawer.nested.NavigationDrawerSettingsDetailsFragment"
+        android:label="Settings Details"
+        tools:layout="@layout/fragment_navigation_drawer_settings_details" />
+</navigation>

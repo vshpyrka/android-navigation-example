@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_drawer_nav_graph"
+    app:startDestination="@id/home">
+
+    <fragment
+        android:id="@+id/home"
+        android:name="com.example.navigation.ui.drawer.NavigationDrawerHomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_navigation_drawer_home" />
+    <fragment
+        android:id="@+id/info"
+        android:name="com.example.navigation.ui.drawer.NavigationDrawerInfoFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_navigation_drawer_info">
+        <action
+            android:id="@+id/action_navigationDrawerInfoFragment_to_navigationDrawerFragmentOuter"
+            app:destination="@id/navigationDrawerFragmentOuter" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationDrawerFragmentOuter"
+        android:name="com.example.navigation.ui.drawer.NavigationDrawerFragmentOuter"
+        android:label="Outer Root Fragment"
+        tools:layout="@layout/fragment_navigation_drawer_outer" />
+
+    <include app:graph="@navigation/activity_navigation_drawer_nested_nav_graph" />
+</navigation>

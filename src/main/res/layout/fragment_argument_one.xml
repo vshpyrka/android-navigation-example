@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0F9"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.example.navigation.args.ArgumentFragmentOne">
+
+    <Button
+        android:id="@+id/open_overwritten_action"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open fragment with overwritten argument in navigation action"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/open_with_argument"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Open fragment with argument passed in navigation action"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

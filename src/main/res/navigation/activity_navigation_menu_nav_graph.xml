@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_menu_nav_graph"
+    app:startDestination="@id/navigationMenuItemFragmentOne">
+
+    <fragment
+        android:id="@+id/navigationMenuItemFragmentOne"
+        android:name="com.example.navigation.ui.menuitems.NavigationMenuItemFragmentOne"
+        android:label="Navigation MenuItem"
+        tools:layout="@layout/fragment_navigation_menu_item_one" />
+    <fragment
+        android:id="@+id/navigationMenuItemFragmentTwo"
+        android:name="com.example.navigation.ui.menuitems.NavigationMenuItemFragmentTwo"
+        android:label="MenuItem Destination"
+        tools:layout="@layout/fragment_navigation_menu_item_two" />
+</navigation>

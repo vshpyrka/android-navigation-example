@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_dialog_interaction_nav_graph"
+    app:startDestination="@id/navigationDialogInteractionFragmentOne">
+
+    <fragment
+        android:id="@+id/navigationDialogInteractionFragmentOne"
+        android:name="com.example.navigation.interaction.dialog.NavigationDialogInteractionHomeFragment"
+        android:label="Dialog Interaction Home"
+        tools:layout="@layout/fragment_navigation_dialog_interaction_home" >
+        <action
+            android:id="@+id/action_navigationDialogInteractionFragmentOne_to_navigationDialogInteractionFragmentTwo"
+            app:destination="@id/navigationDialogInteractionFragmentTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationDialogInteractionFragmentTwo"
+        android:name="com.example.navigation.interaction.dialog.NavigationDialogInteractionDetailsFragment"
+        android:label="Dialog Interaction Details"
+        tools:layout="@layout/fragment_navigation_dialog_interaction_details" >
+        <action
+            android:id="@+id/action_navigationDialogInteractionFragmentTwo_to_navigationDialogInteractionFragment"
+            app:destination="@id/navigationDialogInteractionFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/navigationDialogInteractionFragment"
+        android:name="com.example.navigation.interaction.dialog.NavigationDialogInteractionFragment"
+        android:label="Dialog Interaction Demo"
+        tools:layout="@layout/fragment_navigation_dialog_interaction" />
+</navigation>

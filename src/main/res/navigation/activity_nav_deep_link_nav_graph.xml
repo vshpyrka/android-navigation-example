@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_nav_deep_ling_nav_graph"
+    app:startDestination="@id/navDeepLinkFragmentOne">
+
+    <fragment
+        android:id="@+id/navDeepLinkFragmentOne"
+        android:name="com.example.navigation.deeplinks.NavExplicitDeepLinkHomeFragment"
+        android:label="fragment_nav_deep_link_one"
+        tools:layout="@layout/fragment_nav_explicit_deep_link_home" >
+        <action
+            android:id="@+id/action_navDeepLinkFragmentOne_to_activity_nav_deep_link_nested_nav_graph"
+            app:destination="@id/activity_nav_deep_link_nested_nav_graph" />
+    </fragment>
+
+    <include app:graph="@navigation/activity_nav_deep_link_nested_nav_graph" />
+</navigation>

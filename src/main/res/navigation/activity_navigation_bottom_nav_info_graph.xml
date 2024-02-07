@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/info"
+    app:startDestination="@+id/navigationUiBottomNavInfoFragment">
+
+    <fragment
+        android:id="@+id/navigationUiBottomNavInfoFragment"
+        android:name="com.example.navigation.ui.bottomnav.NavigationUiBottomNavInfoFragment"
+        android:label="Info"
+        tools:layout="@layout/fragment_navigation_ui_bottom_nav_info">
+        <action
+            android:id="@+id/action_navigationUiBottomNavInfoFragment_to_navigationUiBottomNavInfoDetailsFragment"
+            app:destination="@id/navigationUiBottomNavInfoDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationUiBottomNavInfoDetailsFragment"
+        android:name="com.example.navigation.ui.bottomnav.NavigationUiBottomNavInfoDetailsFragment"
+        android:label="Info Details"
+        tools:layout="@layout/fragment_navigation_ui_bottom_nav_info_details" />
+</navigation>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_host_view"
+    app:startDestination="@id/fragment_launcher">
+
+    <fragment
+        android:id="@+id/fragment_launcher"
+        android:name="com.example.navigation.NavigationLauncherFragment"
+        android:label="Second Fragment"
+        tools:layout="@layout/fragment_navigation_launcher">
+        <action
+            android:id="@+id/action_fragmentLauncher_to_included_graph_NavigationActivity"
+            app:destination="@id/includedGraphNavigationActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_browsableActivity"
+            app:destination="@id/browsableActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_destinationsActivity"
+            app:destination="@id/destinationsActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_argumentsActivity"
+            app:destination="@id/argumentsActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_navAnimActivity"
+            app:destination="@id/navAnimActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_navigationUiActivity"
+            app:destination="@id/navigationUiActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_navigationExplicitDeepLinkActivity"
+            app:destination="@id/navigationExplicitDeepLinkActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_navigationDSLActivity"
+            app:destination="@id/navigationDSLActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_interactionNavHostActivity"
+            app:destination="@id/interactionNavHostActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_featureModuleNavigationActivity"
+            app:destination="@id/featureModuleNavigationActivity" />
+        <action
+            android:id="@+id/action_fragmentLauncher_to_navigationLaunchSingleTopActivity"
+            app:destination="@id/navigationLaunchSingleTopActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/includedGraphNavigationActivity"
+        android:name="com.example.navigation.included.NavigationIncludedGraphActivity"
+        android:label="activity_included_graph_navigation"
+        tools:layout="@layout/activity_included_graph_navigation" />
+
+    <activity
+        android:id="@+id/featureModuleNavigationActivity"
+        android:name="com.example.navigation.modules.FeatureModuleNavigationActivity"
+        android:label="activity_feature_module_navigation"
+        tools:layout="@layout/activity_feature_module_navigation" />
+
+    <activity
+        android:id="@+id/browsableActivity"
+        android:name="com.example.navigation.deeplinks.BrowsableActivity"
+        android:label="activity_browsable"
+        app:action="android.intent.action.VIEW"
+        app:data="https://example.com"
+        app:dataPattern="https://example.com?userId={userId}"
+        app:targetPackage="${applicationId}"
+        tools:layout="@layout/activity_browsable">
+        <argument
+            android:name="userId"
+            app:argType="string" />
+    </activity>
+    <activity
+        android:id="@+id/destinationsActivity"
+        android:name="com.example.navigation.destinations.DestinationsActivity"
+        android:label="activity_destinations"
+        tools:layout="@layout/activity_destinations" />
+    <activity
+        android:id="@+id/argumentsActivity"
+        android:name="com.example.navigation.args.ArgumentsActivity"
+        android:label="activity_arguments"
+        tools:layout="@layout/activity_arguments" />
+    <activity
+        android:id="@+id/navAnimActivity"
+        android:name="com.example.navigation.anim.NavAnimActivity"
+        android:label="activity_nav_anim"
+        tools:layout="@layout/activity_nav_anim" />
+    <activity
+        android:id="@+id/navigationUiActivity"
+        android:name="com.example.navigation.ui.NavigationUiActivity"
+        android:label="activity_navigation_ui"
+        tools:layout="@layout/activity_navigation_ui" />
+    <activity
+        android:id="@+id/navigationExplicitDeepLinkActivity"
+        android:name="com.example.navigation.deeplinks.explicit.NavigationExplicitDeepLinkActivity"
+        android:label="activity_navigation_explicit_deep_link"
+        tools:layout="@layout/activity_navigation_explicit_deep_link" />
+    <activity
+        android:id="@+id/navigationDSLActivity"
+        android:name="com.example.navigation.dsl.NavigationDSLActivity"
+        android:label="activity_navigation_dslactivity"
+        tools:layout="@layout/activity_navigation_dslactivity" />
+    <activity
+        android:id="@+id/interactionNavHostActivity"
+        android:name="com.example.navigation.interaction.NavigationInteractionActivity"
+        android:label="activity_interaction_nav_host"
+        tools:layout="@layout/activity_navigation_interaction" />
+    <activity
+        android:id="@+id/navigationLaunchSingleTopActivity"
+        android:name="com.example.navigation.launchsingletop.NavigationLaunchSingleTopActivity"
+        android:label="activity_navigation_launch_single_top"
+        tools:layout="@layout/activity_navigation_launch_single_top" />
+</navigation>

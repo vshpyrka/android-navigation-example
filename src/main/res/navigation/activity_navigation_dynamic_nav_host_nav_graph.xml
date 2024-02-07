@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_dynamic_nav_host_nav_graph"
+    app:startDestination="@id/dynamicNavHostHomeFragment">
+
+    <fragment
+        android:id="@+id/dynamicNavHostHomeFragment"
+        android:name="com.example.navigation.interaction.dynamicnavhost.DynamicNavHostHomeFragment"
+        android:label="Dynamic Nav Host Home"
+        tools:layout="@layout/fragment_dynamic_nav_host_home" >
+        <action
+            android:id="@+id/action_dynamicNavHostFragmentOne_to_dynamicNavHostFragmentTwo"
+            app:destination="@id/dynamicNavHostDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dynamicNavHostDetailsFragment"
+        android:name="com.example.navigation.interaction.dynamicnavhost.DynamicNavHostDetailsFragment"
+        android:label="Dynamic Nav Host Details"
+        tools:layout="@layout/fragment_dynamic_nav_host_details" />
+</navigation>

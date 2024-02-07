@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_ui_destination_listener"
+    app:startDestination="@id/navigationUiDestinationListenerFragmentOne">
+
+    <fragment
+        android:id="@+id/navigationUiDestinationListenerFragmentOne"
+        android:name="com.example.navigation.ui.destination.NavigationUiDestinationListenerFragmentOne"
+        android:label="Destination Listener"
+        tools:layout="@layout/fragment_navigation_ui_destination_listener_one">
+        <action
+            android:id="@+id/action_navigationUiDestinationListenerFragmentOne_to_navigationUiDestinationListenerFragmentTwo"
+            app:destination="@id/navigationUiDestinationListenerFragmentTwo" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigationUiDestinationListenerFragmentTwo"
+        android:name="com.example.navigation.ui.destination.NavigationUiDestinationListenerFragmentTwo"
+        android:label="Destination Change"
+        tools:layout="@layout/fragment_navigation_ui_destination_listener_two">
+
+        <argument
+            android:name="arg"
+            android:defaultValue="0"
+            app:argType="integer" />
+    </fragment>
+</navigation>

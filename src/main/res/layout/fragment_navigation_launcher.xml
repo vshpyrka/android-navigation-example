@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.navigation.NavigationLauncherFragment">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/included_graph"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Included Graph"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/destinations"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Destinations Activity"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/browsable"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Browsable Activity"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/explicit_deep_link"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Explicit Deep Link"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/arguments"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Arguments"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/animation"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Animation"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ui"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="UI"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/dsl"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Navigation Kotlin DSL"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/interaction"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Interaction"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/modules"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Modules"
+            android:textSize="18sp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/launch_single_top"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/listPreferredItemHeight"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="Launch Single Top"
+            android:textSize="18sp" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</ScrollView>

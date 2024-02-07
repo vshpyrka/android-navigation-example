@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation_action_bar_nav_graph"
+    app:startDestination="@id/navigationUiActionBarFragmentOne">
+
+    <fragment
+        android:id="@+id/navigationUiActionBarFragmentOne"
+        android:name="com.example.navigation.ui.actionbar.NavigationUiActionBarFragmentOne"
+        android:label="ActionBar Navigation"
+        tools:layout="@layout/fragment_navigation_ui_action_bar_one" >
+        <action
+            android:id="@+id/action_navigationUiActionBarFragmentOne_to_navigationUiActionBarFragmentTwo"
+            app:destination="@id/navigationUiActionBarFragmentTwo" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigationUiActionBarFragmentTwo"
+        android:name="com.example.navigation.ui.actionbar.NavigationUiActionBarFragmentTwo"
+        android:label="ActionBar Navigation Destination"
+        tools:layout="@layout/fragment_navigation_ui_action_bar_two" />
+</navigation>
