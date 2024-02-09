@@ -15,9 +15,9 @@
             android:id="@+id/action_destinationFragmentOne_to_destinationFragmentTwo"
             app:destination="@id/argumentFragmentTwo">
             <argument
-                android:name="overwritten_argument"
-                android:defaultValue="null"
-                app:argType="string" />
+                android:name="argument"
+                android:defaultValue="200"
+                app:argType="integer" />
         </action>
 
     </fragment>
@@ -29,7 +29,7 @@
         tools:layout="@layout/fragment_argument_two">
         <argument
             android:name="argument"
-            android:defaultValue="0"
+            android:defaultValue="100"
             app:argType="integer" />
         <action
             android:id="@+id/action_argumentFragmentTwo_to_argumentPassActivity"

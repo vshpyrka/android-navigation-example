@@ -13,9 +13,7 @@ class ArgumentFragmentOne : Fragment(R.layout.fragment_argument_one) {
         super.onViewCreated(view, savedInstanceState)
         view.findViewById<Button>(R.id.open_overwritten_action).setOnClickListener {
             it.findNavController().navigate(
-                ArgumentFragmentOneDirections.actionDestinationFragmentOneToDestinationFragmentTwo(
-                    overwrittenArgument = "Overwritten argument"
-                )
+                ArgumentFragmentOneDirections.actionDestinationFragmentOneToDestinationFragmentTwo()
             )
         }
         view.findViewById<Button>(R.id.open_with_argument).setOnClickListener {
