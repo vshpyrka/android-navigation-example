@@ -101,4 +101,40 @@ adb shell am start \
 
 https://github.com/vshpyrka/android-navigation-example/assets/2741602/b6e31f5e-dc1f-45c4-b686-9f79eef6dbd7
 
+[ArgumentsActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/args/ArgumentsActivity.kt) - Shows example of how to set and pass direct fragment arguments and example of how to overwrite argument with different default value in navigation destination action.
+
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/007ab25b-5ab2-400c-ab5f-a4cde220dc48
+
+```
+<fragment
+        android:id="@+id/argumentFragmentOne"
+        android:name="com.example.navigation.args.ArgumentFragmentOne"
+        tools:layout="@layout/fragment_argument_one" >
+        <action
+            android:id="@+id/action_destinationFragmentOne_to_destinationFragmentTwo"
+            app:destination="@id/argumentFragmentTwo">
+            <argument
+                android:name="argument"
+                android:defaultValue="200"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/argumentFragmentTwo"
+        android:name="com.example.navigation.args.ArgumentFragmentTwo"
+        tools:layout="@layout/fragment_argument_two">
+        <argument
+            android:name="argument"
+            android:defaultValue="100"
+            app:argType="integer" />
+```
+[ArgumentPassActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/args/ArgumentPassActivity.kt) - Shows example of how to pass argument to Activity graph first destination.
+
+[NavAnimActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/anim/NavAnimActivity.kt) - Shows example of how to make shared element fragment transition using Jetpack Navigation Component.
+
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/620da395-487d-4699-b2f4-145e6c9af81b
+
+
+
 
