@@ -287,9 +287,111 @@ Example:
             activityClass = NavigationDSLActivityDestination::class
         }
 ``` 
+* [DynamicNavHostActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/interaction/dynamicnavhost/DynamicNavHostActivity.kt) - Shows example of how to create `NavHostFragment` dynamically and set it to a FrameLayout.
 
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/42b8f060-7746-4a24-81e3-7370ad3e3a17
 
+Example:
+```
+    // Dynamic NavHost doesn't restore state when config change or app killed
+    val navHost =
+        NavHostFragment.create(R.navigation.activity_navigation_dynamic_nav_host_nav_graph)
+    supportFragmentManager.beginTransaction()
+        .replace(R.id.container, navHost)
+        .setPrimaryNavigationFragment(navHost)
+        .commitNow()
+    
+    val navController = navHost.navController
+```
 
+*[NavigationDialogInteractionActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/interaction/dialog/NavigationDialogInteractionActivity.kt) - Shows example of navigation interaction with `DialogFragment`.
 
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/8a63f1ca-7ef8-4132-8062-848ba2165cb4
 
+The value from DialogFragmnet is set via `previousBackStackEntry.savedStateHandle` instance. 
 
+On the observer side the fragment has to get the instance of current backstack entry by current navigation destination id `navController.getBackStackEntry(R.id.currentFragment)`.
+Then subscribe to the lifecycle event to receive data from current backstack entry SavedStateHandle instance:
+```
+    val observer = LifecycleEventObserver { _, event ->
+        if (event == Lifecycle.Event.ON_RESUME && backStackEntry.savedStateHandle.contains("key")) {
+            val result = backStackEntry.savedStateHandle.get<String>("key")
+            ...
+    }
+    backStackEntry.lifecycle.addObserver(observer)
+```
+* [NavigationNavGraphViewModelActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/interaction/navgraphviewmodel/NavigationNavGraphViewModelActivity.kt) - Shows example of how to scope `ViewModel` instance to a navigation graph.
+
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/aac89af6-3a8d-43c7-b202-dda6e9e4e600
+
+Two fragments are using a ViewModel instance that is shared and scoped to a navigation graph:
+```
+    // Retrieve viewModel instance scoped to nav graph
+    private val viewModel by navGraphViewModels<GraphViewModel>(
+        R.id.activity_navigation_nav_graph_viewmodel_nav_graph
+    )
+```
+* [NavigationModifyNavGraphActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/interaction/modifygraph/NavigationModifyNavGraphActivity.kt) - Shows example of how to change navigation graph dynamically and change for instance start destination of that graph.
+
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/ac6a35b0-2fa7-48ac-be91-3d8de6831b13
+
+Example:
+```
+    val navHost = binding.container.getFragment<NavHostFragment>()
+    val navController = navHost.findNavController()
+    val navGraph =
+        navController.navInflater.inflate(R.navigation.activity_navigation_modify_runtime_nav_graph)
+    navGraph.setStartDestination(R.id.settings)
+    // Always will navigate back to start destination
+    navController.graph = navGraph
+```
+* [FeatureModuleNavigationActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/modules/FeatureModuleNavigationActivity.kt) - Shows example of how to use `BottomNavigationView` component which has separate navigation graphs for each menu item which are placed in separate modules.
+
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/c6b1e0bc-fdc7-4af6-a782-0ff52e52e762
+
+Example:
+```
+    <?xml version="1.0" encoding="utf-8"?>
+    <navigation xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/nav_graph"
+        app:startDestination="@id/info_screen">
+    
+        <include app:graph="@navigation/module_info_nav_graph" />
+        <include app:graph="@navigation/module_settings_nav_graph" />
+    
+    </navigation>
+```
+Example also shows how to make navigation from one module to a destination from another module using app deeplink
+```
+    binding.button.setOnClickListener {
+        val request = NavDeepLinkRequest.Builder
+            .fromUri("android-app://com.example.navigation/settings_fragment_two".toUri())
+            .build()
+        findNavController().navigate(request)
+    }
+```
+Fragment configuration which receives specified deeplink
+```
+    <fragment
+        android:id="@+id/destination_from_another_module"
+        android:name="NavigationFeatureModuleSettingsDetailsFragment">
+        <deepLink app:uri="android-app://com.example.navigation/settings_fragment_two" />
+    </fragment>
+```
+
+* [NavigationLaunchSingleTopActivity.kt](https://github.com/vshpyrka/android-navigation-example/blob/main/src/main/java/com/example/navigation/launchsingletop/NavigationLaunchSingleTopActivity.kt) - Shows example of how to launch the same fragment multiple times as a single instance using `app:launchSingleTop="true"` navigation attribute.
+  
+https://github.com/vshpyrka/android-navigation-example/assets/2741602/a501e607-a91f-42db-b2cc-cba9f835cd21
+
+Example:
+```
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="NavigationLaunchSingleTopFragment">
+        <action
+            android:id="@+id/action_navigationLaunchSingleTopFragmentTwo_self"
+            app:launchSingleTop="true"
+            app:destination="@id/navigationLaunchSingleTopFragmentTwo" />
+    </fragment>
+```
