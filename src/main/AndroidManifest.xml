@@ -111,6 +111,7 @@
 
         <activity
             android:name="com.example.navigation.ui.bottomnav.NavigationUiBottomNavActivity"
+            android:theme="@style/Theme.MaterialComponents"
             android:exported="true" />
 
         <activity

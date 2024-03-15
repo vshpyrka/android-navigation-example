@@ -1,6 +1,8 @@
 package com.example.navigation.interaction.dialog
 
+import android.content.Context
 import androidx.lifecycle.Lifecycle
+import androidx.test.core.app.ApplicationProvider
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso
 import androidx.test.espresso.Espresso.onView
@@ -10,6 +12,9 @@ import androidx.test.espresso.assertion.ViewAssertions
 import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
+import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
+import androidx.test.uiautomator.UiDevice
 import com.example.navigation.R
 import com.google.common.truth.Truth
 import org.hamcrest.Matchers.allOf
@@ -24,7 +29,7 @@ class NavigationDialogInteractionActivityTest {
         val scenario = launchActivity<NavigationDialogInteractionActivity>()
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_one"),
+                withText("Dialog Interaction Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -33,7 +38,7 @@ class NavigationDialogInteractionActivityTest {
 
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_two"),
+                withText("Dialog Interaction Details"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -49,7 +54,7 @@ class NavigationDialogInteractionActivityTest {
         pressBackUnconditionally()
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_one"),
+                withText("Dialog Interaction Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -63,7 +68,7 @@ class NavigationDialogInteractionActivityTest {
         val scenario = launchActivity<NavigationDialogInteractionActivity>()
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_one"),
+                withText("Dialog Interaction Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -72,7 +77,7 @@ class NavigationDialogInteractionActivityTest {
 
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_two"),
+                withText("Dialog Interaction Details"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -87,7 +92,11 @@ class NavigationDialogInteractionActivityTest {
 
         // Recreate or make config change
         scenario.recreate()
-        Espresso.onIdle()
+
+        val instrumentation = getInstrumentation()
+        val uiDevice = UiDevice.getInstance(instrumentation)
+        val context: Context = ApplicationProvider.getApplicationContext()
+        uiDevice.waitForWindowUpdate(context.packageName, 1000)
 
         pressBackUnconditionally()
         onView(withId(com.google.android.material.R.id.snackbar_text))
@@ -95,7 +104,7 @@ class NavigationDialogInteractionActivityTest {
         pressBackUnconditionally()
         onView(
             allOf(
-                withText("fragment_navigation_dialog_interaction_one"),
+                withText("Dialog Interaction Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))

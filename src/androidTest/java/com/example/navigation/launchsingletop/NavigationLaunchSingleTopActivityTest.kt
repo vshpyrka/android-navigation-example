@@ -18,16 +18,16 @@ class NavigationLaunchSingleTopActivityTest {
     @Test
     fun testSelfNavigation() {
         launchActivity<NavigationLaunchSingleTopActivity>().use {
-            onView(withId(R.id.button)).check(matches(withText("Button")))
+            onView(withId(R.id.button)).check(matches(withText("Launch Single Top Fragment")))
             onView(withId(R.id.button)).perform(click())
-            val text = "Hello blank fragment"
-            onView(withId(R.id.button)).check(matches(withText(text + "0")))
+            val text = "Launch SingleTop Fragment Again"
+            onView(withId(R.id.button)).check(matches(withText(text)))
             onView(withId(R.id.button)).perform(click())
-            onView(withId(R.id.button)).check(matches(withText(text + "1")))
+            onView(withId(R.id.button)).check(matches(withText(text)))
             onView(withId(R.id.button)).perform(click())
-            onView(withId(R.id.button)).check(matches(withText(text + "2")))
+            onView(withId(R.id.button)).check(matches(withText(text)))
             Espresso.pressBackUnconditionally()
-            onView(withId(R.id.button)).check(matches(withText("Button")))
+            onView(withId(R.id.button)).check(matches(withText("Launch Single Top Fragment")))
         }
     }
 }

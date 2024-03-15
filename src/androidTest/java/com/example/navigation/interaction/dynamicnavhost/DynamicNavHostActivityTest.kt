@@ -22,21 +22,21 @@ class DynamicNavHostActivityTest {
         val scenario = launchActivity<DynamicNavHostActivity>()
         onView(
             allOf(
-                withText("dynamic_nav_host_one"),
+                withText("Dynamic Nav Host Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
         onView(withId(R.id.button)).perform(ViewActions.click())
         onView(
             allOf(
-                withText("dynamic_nav_host_two"),
+                withText("Dynamic Nav Host Details"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
         onView(withId(R.id.button)).perform(ViewActions.click())
         onView(
             allOf(
-                withText("dynamic_nav_host_one"),
+                withText("Dynamic Nav Host Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))

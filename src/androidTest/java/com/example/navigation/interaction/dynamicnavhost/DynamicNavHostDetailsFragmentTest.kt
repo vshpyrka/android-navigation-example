@@ -31,8 +31,8 @@ class DynamicNavHostDetailsFragmentTest {
         onView(withId(R.id.button)).perform(click())
         val prevBackStackEntry =
             navController.getBackStackEntry(R.id.dynamicNavHostHomeFragment)
-        val value = prevBackStackEntry.savedStateHandle.get<String>("test")
-        Assert.assertEquals("value", value)
+        val value = prevBackStackEntry.savedStateHandle.get<String>("argument")
+        Assert.assertEquals("Hello", value)
         Truth.assertThat(navController.currentDestination?.id).isEqualTo(R.id.dynamicNavHostHomeFragment)
         scenario.close()
     }
