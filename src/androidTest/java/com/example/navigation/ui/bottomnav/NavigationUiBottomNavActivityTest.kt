@@ -48,7 +48,12 @@ class NavigationUiBottomNavActivityTest {
         onView(withContentDescription(androidx.navigation.ui.R.string.nav_app_bar_navigate_up_description))
             .perform(click())
         onView(withId(R.id.settings)).perform(click())
-        onView(withId(R.id.text)).check(matches(withText("Settings")))
+        onView(
+            Matchers.allOf(
+                withText("Settings"),
+                isDescendantOfA(withResourceName("action_bar"))
+            )
+        ).check(matches(isDisplayed()))
         scenario.close()
     }
 }

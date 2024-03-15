@@ -33,20 +33,20 @@ class FeatureModuleNavigationActivityTest {
     @Test
     fun testInfoModules() {
         onView(withId(R.id.info_screen)).perform(click())
-        onView(withId(R.id.text)).check(matches(withText("Info")))
+        onView(withId(R.id.title)).check(matches(withText("Module NavHost Info")))
         onView(withId(R.id.button)).check(matches(withText("OPEN DEEP SCREEN FROM SETTINGS")))
     }
 
     @Test
     fun testSettingsModules() {
         onView(withId(R.id.settings_screen)).perform(click())
-        onView(withId(R.id.text)).check(matches(withText("Settings")))
+        onView(withId(R.id.title)).check(matches(withText("Module NavHost Settings")))
     }
 
     @Test
     fun testInfoModuleSettingsDeepLinkClick() {
         onView(withId(R.id.button)).perform(click())
         onView(withId(R.id.bottom_nav)).check(matches(withBottomNavViewCheckedItem(R.id.settings_screen)))
-        onView(withId(R.id.text)).check(matches(withText("Settings Fragment two")))
+        onView(withId(R.id.title)).check(matches(withText("Module NavHost Settings Details")))
     }
 }

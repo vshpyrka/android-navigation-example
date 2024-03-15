@@ -21,14 +21,22 @@ class DestinationsActivityTest {
     fun testDestinations() {
         val scenario = launchActivity<DestinationsActivity>()
 
-        onView(withId(R.id.button)).perform(click())
-        onView(withId(R.id.button)).check(matches(withText("Back")))
+        val startDestinationButtonText = "Open Next Destination"
+        val endDestinationButtonText = "Navigate Back"
 
+        onView(withId(R.id.button)).check(matches(withText(startDestinationButtonText)))
         onView(withId(R.id.button)).perform(click())
-        onView(withId(R.id.button)).check(matches(withText("Hello blank fragment")))
 
+        onView(withId(R.id.button)).check(matches(withText(endDestinationButtonText)))
         onView(withId(R.id.button)).perform(click())
+
+        onView(withId(R.id.button)).check(matches(withText(startDestinationButtonText)))
         onView(withId(R.id.button)).perform(click())
+
+        onView(withId(R.id.button)).check(matches(withText(endDestinationButtonText)))
+        onView(withId(R.id.button)).perform(click())
+
+        onView(withId(R.id.button)).check(matches(withText(startDestinationButtonText)))
 
         Espresso.pressBackUnconditionally()
         assertThat(scenario.state).isEqualTo(Lifecycle.State.DESTROYED)

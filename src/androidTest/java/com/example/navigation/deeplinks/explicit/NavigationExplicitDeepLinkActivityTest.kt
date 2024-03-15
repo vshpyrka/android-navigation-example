@@ -72,7 +72,7 @@ class NavigationExplicitDeepLinkActivityTest {
         // Wait until app becomes visible again
         // uiDevice.wait(Until.hasObject(By.pkg(context.packageName).depth(0)), 2000)
         uiDevice.waitForWindowUpdate(context.packageName, 1000)
-        onView(withId(R.id.text)).check(matches(withText("Received Deeplink Arguments: \nid=982 \nstatus=123")))
+        onView(withId(R.id.text)).check(matches(withText("Received Deeplink Arguments: \nid=123 \nstatus=982")))
         Espresso.pressBackUnconditionally()
         onView(withId(R.id.title)).check(matches(withText("Nested Nav DeepLink Home")))
         Espresso.pressBackUnconditionally()

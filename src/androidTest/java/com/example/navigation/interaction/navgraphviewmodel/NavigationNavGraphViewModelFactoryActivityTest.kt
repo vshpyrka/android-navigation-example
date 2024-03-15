@@ -24,7 +24,7 @@ class NavigationNavGraphViewModelFactoryActivityTest {
         val scenario = launchActivity<NavigationNavGraphViewModelActivity>()
         onView(
             allOf(
-                withText("fragment_navigation_nav_graph_view_model_one"),
+                withText("NavGraph Scoped ViewModel Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         )
@@ -39,7 +39,7 @@ class NavigationNavGraphViewModelFactoryActivityTest {
         onView(withId(R.id.button)).perform(click())
         onView(
             allOf(
-                withText("fragment_navigation_nav_graph_view_model_two"),
+                withText("NavGraph Scoped ViewModel Details"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
@@ -47,7 +47,7 @@ class NavigationNavGraphViewModelFactoryActivityTest {
             .perform(click())
         onView(
             allOf(
-                withText("fragment_navigation_nav_graph_view_model_one"),
+                withText("NavGraph Scoped ViewModel Home"),
                 isDescendantOfA(withResourceName("action_bar"))
             )
         ).check(matches(isDisplayed()))
