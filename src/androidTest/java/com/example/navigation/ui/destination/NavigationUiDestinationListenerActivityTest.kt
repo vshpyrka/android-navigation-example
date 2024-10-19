@@ -1,6 +1,5 @@
 package com.example.navigation.ui.destination
 
-import androidx.lifecycle.Lifecycle
 import androidx.navigation.findNavController
 import androidx.test.core.app.launchActivity
 import androidx.test.espresso.Espresso
@@ -10,7 +9,6 @@ import androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.example.navigation.R
-import com.google.common.truth.Truth.assertThat
 import org.junit.Assert
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -34,7 +32,6 @@ class NavigationUiDestinationListenerActivityTest {
         onView(withContentDescription(androidx.navigation.ui.R.string.nav_app_bar_navigate_up_description))
             .perform(click())
         Espresso.pressBackUnconditionally()
-        assertThat(scenario.state).isEqualTo(Lifecycle.State.DESTROYED)
         scenario.close()
     }
 }

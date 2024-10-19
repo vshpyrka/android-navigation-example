@@ -19,7 +19,9 @@ class NavigationUiDestinationListenerFragmentOneTest {
     @Test
     fun testNavigationUiDestinationListenerFragmentOne() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavigationUiDestinationListenerFragmentOne>()
+        val scenario = launchFragmentInContainer<NavigationUiDestinationListenerFragmentOne>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_navigation_ui_destination_listener)
             Navigation.setViewNavController(it.requireView(), navController)

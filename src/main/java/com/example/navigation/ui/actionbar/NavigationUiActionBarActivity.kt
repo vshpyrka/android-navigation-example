@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityNavigationUiActionBarBinding
 
 class NavigationUiActionBarActivity : AppCompatActivity() {
@@ -18,6 +19,7 @@ class NavigationUiActionBarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityNavigationUiActionBarBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.content)
 
         val navHostFragment = binding.content.getFragment<NavHostFragment>()

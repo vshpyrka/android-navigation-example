@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityNavigationUiDestinationListenerBinding
 
 class NavigationUiDestinationListenerActivity : AppCompatActivity() {
@@ -22,6 +23,7 @@ class NavigationUiDestinationListenerActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         binding = ActivityNavigationUiDestinationListenerBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)

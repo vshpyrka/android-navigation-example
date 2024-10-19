@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationUiBottomNavInfoDetailsBinding
 
 class NavigationUiBottomNavInfoDetailsFragment : Fragment(
@@ -14,6 +15,7 @@ class NavigationUiBottomNavInfoDetailsFragment : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentNavigationUiBottomNavInfoDetailsBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener {
             findNavController().popBackStack()
         }

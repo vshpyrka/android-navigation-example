@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.navGraphViewModels
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationNavGraphViewModelDetailsBinding
 import com.example.navigation.getLoremIpsum
 
@@ -21,6 +22,7 @@ class NavigationNavGraphViewModelDetailsFragment :
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentNavigationNavGraphViewModelDetailsBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.text.movementMethod = ScrollingMovementMethod()
         binding.text.text = getLoremIpsum()
         val title = "Current ViewModel Parameter - ${viewModel.parameter}"

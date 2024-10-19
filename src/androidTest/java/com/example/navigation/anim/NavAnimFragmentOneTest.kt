@@ -19,7 +19,9 @@ class NavAnimFragmentOneTest {
     @Test
     fun testNavigationToAnimFragmentTwo() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavAnimFragmentOne>()
+        val scenario = launchFragmentInContainer<NavAnimFragmentOne>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_nav_anim)
             Navigation.setViewNavController(it.requireView(), navController)

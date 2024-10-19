@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationDialogInteractionBinding
 
 class NavigationDialogInteractionFragment : DialogFragment(
@@ -15,6 +16,7 @@ class NavigationDialogInteractionFragment : DialogFragment(
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentNavigationDialogInteractionBinding.bind(view)
+        binding.root.applyWindowInsets()
 
         val navController = findNavController()
 

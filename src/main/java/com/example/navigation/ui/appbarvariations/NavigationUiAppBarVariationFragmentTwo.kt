@@ -7,6 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationUiAppBarVariationTwoBinding
 import com.example.navigation.getLoremIpsum
 
@@ -17,6 +18,7 @@ class NavigationUiAppBarVariationFragmentTwo : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentNavigationUiAppBarVariationTwoBinding.bind(view)
+        binding.root.applyWindowInsets()
         val navController = findNavController()
         val appBarConfiguration = AppBarConfiguration(navController.graph)
         binding.toolbar.setupWithNavController(navController, appBarConfiguration)

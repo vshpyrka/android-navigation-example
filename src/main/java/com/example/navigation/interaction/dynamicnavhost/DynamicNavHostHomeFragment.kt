@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentDynamicNavHostHomeBinding
 import com.example.navigation.getLoremIpsum
 import com.google.android.material.snackbar.Snackbar
@@ -16,6 +17,7 @@ class DynamicNavHostHomeFragment : Fragment(R.layout.fragment_dynamic_nav_host_h
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentDynamicNavHostHomeBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener {
             findNavController().navigate(
                 DynamicNavHostHomeFragmentDirections.actionDynamicNavHostFragmentOneToDynamicNavHostFragmentTwo()

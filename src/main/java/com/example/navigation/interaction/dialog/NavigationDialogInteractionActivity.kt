@@ -7,6 +7,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityNavigationDialogInteractionBinding
 
 class NavigationDialogInteractionActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class NavigationDialogInteractionActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityNavigationDialogInteractionBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         val navHost = binding.container.getFragment<NavHostFragment>()

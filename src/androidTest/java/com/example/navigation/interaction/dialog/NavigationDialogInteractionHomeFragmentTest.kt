@@ -19,7 +19,9 @@ class NavigationDialogInteractionHomeFragmentTest {
     @Test
     fun testNavigationDialogInteractionFragmentOne() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavigationDialogInteractionHomeFragment>()
+        val scenario = launchFragmentInContainer<NavigationDialogInteractionHomeFragment>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_dialog_interaction_nav_graph)
             Navigation.setViewNavController(it.requireView(), navController)

@@ -6,11 +6,13 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 
 class DestinationFragmentOne : Fragment(R.layout.fragment_destination_one) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.applyWindowInsets()
         view.findViewById<Button>(R.id.button).setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 DestinationFragmentOneDirections.actionDestinationFragmentOneToDestinationFragmentTwo()

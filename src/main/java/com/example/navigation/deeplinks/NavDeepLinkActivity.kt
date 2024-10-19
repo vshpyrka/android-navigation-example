@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityNavDeepLinkBinding
 
 class NavDeepLinkActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class NavDeepLinkActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityNavDeepLinkBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         val navHostFragment = binding.content.getFragment<NavHostFragment>()

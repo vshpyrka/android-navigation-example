@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationUiDestinationListenerOneBinding
 import com.example.navigation.getLoremIpsum
 
@@ -16,6 +17,7 @@ class NavigationUiDestinationListenerFragmentOne : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentNavigationUiDestinationListenerOneBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener(
             Navigation.createNavigateOnClickListener(
                 NavigationUiDestinationListenerFragmentOneDirections.actionNavigationUiDestinationListenerFragmentOneToNavigationUiDestinationListenerFragmentTwo(

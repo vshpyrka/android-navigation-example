@@ -9,6 +9,7 @@ import androidx.lifecycle.LifecycleEventObserver
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationDialogInteractionDetailsBinding
 import com.example.navigation.getLoremIpsum
 import com.google.android.material.snackbar.Snackbar
@@ -21,6 +22,7 @@ class NavigationDialogInteractionDetailsFragment : Fragment(
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentNavigationDialogInteractionDetailsBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.text.movementMethod = ScrollingMovementMethod()
         binding.text.text = getLoremIpsum()
 

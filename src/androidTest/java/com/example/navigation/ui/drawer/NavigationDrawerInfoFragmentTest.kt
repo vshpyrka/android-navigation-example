@@ -19,7 +19,9 @@ class NavigationDrawerInfoFragmentTest {
     @Test
     fun testNavigationDrawerFragmentThree() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavigationDrawerInfoFragment>()
+        val scenario = launchFragmentInContainer<NavigationDrawerInfoFragment>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_navigation_drawer_nav_graph)
             navController.navigate(R.id.info)

@@ -11,6 +11,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.navigation.R
+import com.example.navigation.databinding.ActivityNavigationDsldeepLinkBinding
 
 /**
  * To launch
@@ -20,12 +21,15 @@ adb shell am start \
 -d "http://www.example.com/navigation/dsl/123?status=200"
  **/
 
-class NavigationDSLDeepLinkActivity : AppCompatActivity(R.layout.activity_navigation_dsldeep_link) {
+class NavigationDSLDeepLinkActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val binding = ActivityNavigationDsldeepLinkBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val baseUri = "http://www.example.com/navigation/dsl"
 

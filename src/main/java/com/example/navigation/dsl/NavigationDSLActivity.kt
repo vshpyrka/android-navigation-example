@@ -8,17 +8,20 @@ import androidx.navigation.fragment.fragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.R as navigationR
-import com.example.navigation.dsl.nested.NavigationDSLNestedGraphHomeFragment
-import com.example.navigation.dsl.nested.NavigationDSLNestedGraphDetailsFragment
 import com.example.navigation.R
+import com.example.navigation.databinding.ActivityNavigationDslactivityBinding
+import com.example.navigation.dsl.nested.NavigationDSLNestedGraphDetailsFragment
+import com.example.navigation.dsl.nested.NavigationDSLNestedGraphHomeFragment
+import androidx.navigation.ui.R as navigationR
 
-class NavigationDSLActivity : AppCompatActivity(R.layout.activity_navigation_dslactivity) {
+class NavigationDSLActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val binding = ActivityNavigationDslactivityBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.container) as NavHostFragment

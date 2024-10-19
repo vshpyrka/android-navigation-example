@@ -19,7 +19,9 @@ class NavigationDrawerSettingsFragmentTest {
     @Test
     fun testNavigationDrawerNestedFragmentOne() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavigationDrawerSettingsFragment>()
+        val scenario = launchFragmentInContainer<NavigationDrawerSettingsFragment>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_navigation_drawer_nested_nav_graph)
             Navigation.setViewNavController(it.requireView(), navController)

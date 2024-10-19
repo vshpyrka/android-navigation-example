@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentArgumentTwoBinding
 
 class ArgumentFragmentTwo : Fragment(R.layout.fragment_argument_two) {
@@ -19,6 +20,7 @@ class ArgumentFragmentTwo : Fragment(R.layout.fragment_argument_two) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentArgumentTwoBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.text.text = navArgs.argument.toString()
         view.findViewById<Button>(R.id.button).setOnClickListener {
             it.findNavController()

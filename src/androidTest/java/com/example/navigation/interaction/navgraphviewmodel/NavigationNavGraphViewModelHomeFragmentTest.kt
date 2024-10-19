@@ -23,7 +23,9 @@ class NavigationNavGraphViewModelHomeFragmentTest {
         // To provide working test when there is nav graph ViewModel used
         val viewModelStore = ViewModelStore()
         navController.setViewModelStore(viewModelStore)
-        val scenario = launchFragmentInContainer {
+        val scenario = launchFragmentInContainer(
+            themeResId = R.style.AppTheme_NoActionBar
+        ) {
             // Set NavController before onViewCreated
             NavigationNavGraphViewModelHomeFragment().apply {
                 viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->

@@ -7,6 +7,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationLaunchSingleTopTwoBinding
 import kotlin.random.Random
 
@@ -34,6 +35,7 @@ class NavigationLaunchSingleTopFragmentTwo : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentNavigationLaunchSingleTopTwoBinding.bind(view)
+        binding.root.applyWindowInsets()
 
         val key = "KEY_COLOR"
         val argument = arguments?.getInt(key, 0) ?: 0

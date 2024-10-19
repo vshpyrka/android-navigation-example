@@ -23,7 +23,9 @@ class NavigationDialogInteractionFragmentTest {
     @Test
     fun testNavigationDialogInteractionFragment() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer {
+        val scenario = launchFragmentInContainer(
+            themeResId = R.style.AppTheme_NoActionBar
+        ) {
             NavigationDialogInteractionFragment().also {
                 it.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     it.viewModelStore
@@ -47,7 +49,9 @@ class NavigationDialogInteractionFragmentTest {
     @Test
     fun testDismissDialogFragment() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragment {
+        val scenario = launchFragment(
+            themeResId = R.style.AppTheme_NoActionBar
+        ) {
             NavigationDialogInteractionFragment().also {
                 it.viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {

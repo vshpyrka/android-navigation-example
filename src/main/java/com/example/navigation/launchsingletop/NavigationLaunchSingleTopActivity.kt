@@ -1,8 +1,14 @@
 package com.example.navigation.launchsingletop
 
+import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.example.navigation.R
+import com.example.navigation.databinding.ActivityNavigationLaunchSingleTopBinding
 
-class NavigationLaunchSingleTopActivity : AppCompatActivity(
-    R.layout.activity_navigation_launch_single_top
-)
+class NavigationLaunchSingleTopActivity : AppCompatActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val binding = ActivityNavigationLaunchSingleTopBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+    }
+}

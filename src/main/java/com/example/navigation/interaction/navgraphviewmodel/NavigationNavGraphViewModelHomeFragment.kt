@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.navGraphViewModels
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationNavGraphViewModelHomeBinding
 import com.example.navigation.getLoremIpsum
 
@@ -26,6 +27,7 @@ class NavigationNavGraphViewModelHomeFragment : Fragment(
         super.onViewCreated(view, savedInstanceState)
 
         _binding = FragmentNavigationNavGraphViewModelHomeBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener {
 
             viewModel.parameter = "Hello!"

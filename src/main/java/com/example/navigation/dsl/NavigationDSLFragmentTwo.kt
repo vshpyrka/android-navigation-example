@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationDSLTwoBinding
 import com.example.navigation.getLoremIpsum
 
@@ -16,6 +17,7 @@ class NavigationDSLFragmentTwo : Fragment(R.layout.fragment_navigation_d_s_l_two
         val argument = arguments?.getString(nav_graph.args.id) ?: ""
 
         val binding = FragmentNavigationDSLTwoBinding.bind(view)
+        binding.root.applyWindowInsets()
         val text = "DSL Destination ARG - $argument"
         binding.title.text = text
         binding.button.setOnClickListener {

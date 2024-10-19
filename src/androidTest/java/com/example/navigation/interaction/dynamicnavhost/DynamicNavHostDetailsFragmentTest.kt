@@ -21,7 +21,9 @@ class DynamicNavHostDetailsFragmentTest {
     @Test
     fun testDynamicNavHostFragmentTwo() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<DynamicNavHostDetailsFragment>()
+        val scenario = launchFragmentInContainer<DynamicNavHostDetailsFragment>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setViewModelStore(ViewModelStore())
             navController.setGraph(R.navigation.activity_navigation_dynamic_nav_host_nav_graph)

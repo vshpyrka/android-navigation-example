@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentStartDestinationBinding
 
 class StartDestinationFragment : Fragment(R.layout.fragment_start_destination) {
@@ -25,6 +26,7 @@ class StartDestinationFragment : Fragment(R.layout.fragment_start_destination) {
         super.onViewCreated(view, savedInstanceState)
         println("AAA 2 ${findNavController()}")
         _binding = FragmentStartDestinationBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.text.text = args.key
     }
 

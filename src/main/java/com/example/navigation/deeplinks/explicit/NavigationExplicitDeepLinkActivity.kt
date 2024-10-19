@@ -6,20 +6,20 @@ import android.app.NotificationManager
 import android.content.Context
 import android.content.pm.PackageManager
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.navigation.NavDeepLinkBuilder
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
+import com.example.navigation.databinding.ActivityNavigationExplicitDeepLinkBinding
 import com.example.navigation.deeplinks.NavDeepLinkActivity
 
-class NavigationExplicitDeepLinkActivity : AppCompatActivity(
-    R.layout.activity_navigation_explicit_deep_link
-) {
+class NavigationExplicitDeepLinkActivity : AppCompatActivity() {
 
     companion object {
         const val KEY_FIRST = "FIRST"
@@ -29,6 +29,9 @@ class NavigationExplicitDeepLinkActivity : AppCompatActivity(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val binding = ActivityNavigationExplicitDeepLinkBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
+        setContentView(binding.root)
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
 

@@ -3,6 +3,7 @@ package com.example.navigation.ui
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityNavigationUiBinding
 import com.example.navigation.ui.actionbar.NavigationUiActionBarActivity
 import com.example.navigation.ui.appbarvariations.NavigationUiAppBarVariationActivity
@@ -17,6 +18,7 @@ class NavigationUiActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityNavigationUiBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         binding.toolbar.setOnClickListener {

@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentDynamicNavHostDetailsBinding
 import com.example.navigation.getLoremIpsum
 
@@ -15,6 +16,7 @@ class DynamicNavHostDetailsFragment : Fragment(R.layout.fragment_dynamic_nav_hos
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentDynamicNavHostDetailsBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener {
             val previousBackStackEntry = findNavController().previousBackStackEntry
             previousBackStackEntry?.savedStateHandle?.set("argument", "Hello")

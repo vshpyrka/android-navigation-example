@@ -20,7 +20,9 @@ class DynamicNavHostHomeFragmentTest {
     @Test
     fun testDynamicNavHostFragmentOne() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer {
+        val scenario = launchFragmentInContainer(
+            themeResId = R.style.AppTheme_NoActionBar
+        ) {
             DynamicNavHostHomeFragment().apply {
                 viewLifecycleOwnerLiveData.observeForever { viewLifecycleOwner ->
                     if (viewLifecycleOwner != null) {

@@ -19,7 +19,9 @@ class NavigationUiBottomNavInfoFragmentTest {
     @Test
     fun testNavigationUiBottomNavInfoFragment() {
         val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
-        val scenario = launchFragmentInContainer<NavigationUiBottomNavInfoFragment>()
+        val scenario = launchFragmentInContainer<NavigationUiBottomNavInfoFragment>(
+            themeResId = R.style.AppTheme_NoActionBar
+        )
         scenario.onFragment {
             navController.setGraph(R.navigation.activity_navigation_bottom_nav_info_graph)
             Navigation.setViewNavController(it.requireView(), navController)

@@ -13,6 +13,7 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 
 class NavAnimFragmentTwo : Fragment(R.layout.fragment_nav_anim_two) {
 
@@ -25,6 +26,7 @@ class NavAnimFragmentTwo : Fragment(R.layout.fragment_nav_anim_two) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.applyWindowInsets()
         val image = view.findViewById<ImageView>(R.id.custom_view)
         ViewCompat.setTransitionName(image, "custom_view")
 

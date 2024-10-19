@@ -6,6 +6,7 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityArgumentPassBinding
 
 class ArgumentPassActivity : AppCompatActivity() {
@@ -13,6 +14,7 @@ class ArgumentPassActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityArgumentPassBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         val navHostFragment = binding.container.getFragment<NavHostFragment>()

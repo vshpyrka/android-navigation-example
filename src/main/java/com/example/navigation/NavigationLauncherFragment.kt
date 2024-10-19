@@ -26,6 +26,7 @@ class NavigationLauncherFragment : Fragment(R.layout.fragment_navigation_launche
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentNavigationLauncherBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.includedGraph.setOnClickListener {
             it.findNavController()
                 .navigate(

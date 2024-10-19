@@ -6,12 +6,14 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.ActivityCollapsingToolbarBinding
 
 class CollapsingToolbarActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityCollapsingToolbarBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
         setContentView(binding.root)
 
         val navHostFragment = binding.content.getFragment<NavHostFragment>()

@@ -8,14 +8,20 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
+import com.example.navigation.databinding.ActivityDynamicNavHostBinding
 
-class DynamicNavHostActivity : AppCompatActivity(R.layout.activity_dynamic_nav_host) {
+class DynamicNavHostActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val binding = ActivityDynamicNavHostBinding.inflate(layoutInflater)
+        binding.root.applyWindowInsets()
+        setContentView(binding.root)
 
         // Dynamic NavHost doesn't restore state when config change or app killed
         val navHost =

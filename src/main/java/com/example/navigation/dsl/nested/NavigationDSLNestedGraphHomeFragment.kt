@@ -6,6 +6,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationDSLNestedGraphHomeBinding
 import com.example.navigation.dsl.nav_graph
 import com.example.navigation.getLoremIpsum
@@ -17,6 +18,7 @@ class NavigationDSLNestedGraphHomeFragment : Fragment(
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentNavigationDSLNestedGraphHomeBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.button.setOnClickListener {
             findNavController().navigate(
                 nav_graph.dest.nested_graph_fragment_two

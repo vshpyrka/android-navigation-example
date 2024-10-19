@@ -5,6 +5,7 @@ import android.text.method.ScrollingMovementMethod
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.navigation.R
+import com.example.navigation.applyWindowInsets
 import com.example.navigation.databinding.FragmentNavigationModifyNavGraphSettingsBinding
 import com.example.navigation.getLoremIpsum
 
@@ -16,6 +17,7 @@ class NavigationModifyNavGraphSettingsFragment : Fragment(
         super.onViewCreated(view, savedInstanceState)
 
         val binding = FragmentNavigationModifyNavGraphSettingsBinding.bind(view)
+        binding.root.applyWindowInsets()
         binding.text.movementMethod = ScrollingMovementMethod()
         binding.text.text = getLoremIpsum()
     }
