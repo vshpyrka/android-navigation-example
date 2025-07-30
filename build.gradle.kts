@@ -1,7 +1,7 @@
 plugins {
     alias(pluginLibs.plugins.android.library)
     alias(pluginLibs.plugins.kotlin.android)
-    alias(pluginLibs.plugins.kotlin.kapt)
+    alias(pluginLibs.plugins.ksp)
     alias(pluginLibs.plugins.navigation.safeargs)
 }
 
@@ -53,7 +53,7 @@ dependencies {
     implementation(libs.tracing)
 
     implementation(libs.glide)
-    kapt(libs.glide.compiler)
+    ksp(libs.glide.compiler)
 
     debugImplementation(testLibs.fragment.testing.manifest)
     androidTestImplementation(testLibs.fragment.testing)
